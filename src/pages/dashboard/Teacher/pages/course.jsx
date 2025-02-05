@@ -20,7 +20,7 @@ const CourseTeacher = () => {
         dispatch(getAllCourses())
     }
 
-    if (courseState.error) return <ErrorAlert message={courseState.error} />;
+    // if (courseState.error) return <ErrorAlert message={courseState.error} />;
     if (courseState.isLoading) return <Loading />;
 
     return (

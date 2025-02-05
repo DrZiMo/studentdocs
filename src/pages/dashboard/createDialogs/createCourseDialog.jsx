@@ -123,9 +123,9 @@ const CreateCourse = () => {
                         <fieldset className="mb-[15px] flex items-center gap-5">
                             <label
                                 className="w-[90px] text-right text-[15px] text-violet11"
-                                htmlFor="year"
+                                htmlFor="semester"
                             >
-                                Year
+                                Semester
                             </label>
                             <input
                                 className="inline-flex h-[35px] w-full flex-1 items-center justify-center rounded px-2.5 text-[15px] leading-none text-violet11 shadow-[0_0_0_1px] shadow-violet7 outline-none focus:shadow-[0_0_0_2px] focus:shadow-violet8 text-gray-900"

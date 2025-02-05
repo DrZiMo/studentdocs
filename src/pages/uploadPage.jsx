@@ -74,7 +74,6 @@ const UploadPage = () => {
       description: '',
       faculty: '',
       course: '',
-      file_type: 'PDF',
       year: 1,
       classes: [],
       file: null,
@@ -85,7 +84,6 @@ const UploadPage = () => {
         description: values.description,
         faculty_id: values.faculty,
         course_id: values.course,
-        file_type: values.file_type,
         classes: values.classes,
         file: values.file,
       };
@@ -155,17 +153,6 @@ const UploadPage = () => {
             <p className="text-sm font-bold text-red-500">
               {formik.touched.description && formik.errors.description}
             </p>
-
-            {/* File type section */}
-            <label htmlFor="doc-type" className='mt-2'>File type<span className='text-red-500 font-bold text-lg'>*</span></label>
-            <select name="file_type" id="doc-type" className='bg-gray-200 rounded-md px-3 py-2 outline-none w-full' value={formik.values.file_type} onChange={formik.handleChange} onBlur={formik.handleBlur}>
-              <option value="PDF">PDF</option>
-              <option value="DOCX">DOCX</option>
-              <option value="PPT">PPT</option>
-              <option value="Video">Video</option>
-              <option value="Image">Image</option>
-              <option value="Other">Other</option>
-            </select>
 
             {/* Faculty Selection */}
             <label htmlFor="doc-faculty" className='mt-2'>Faculty<span className='text-red-500 font-bold text-lg'>*</span></label>

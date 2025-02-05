@@ -21,7 +21,7 @@ const FacultiesAdmin = () => {
         dispatch(getAllFaculties());
     }
 
-    if (facultyState.error) return <ErrorAlert message={facultyState.error} />;
+    // if (facultyState.error) return <ErrorAlert message={facultyState.error} />;
     if (facultyState.isLoading) return <Loading />;
 
     return (

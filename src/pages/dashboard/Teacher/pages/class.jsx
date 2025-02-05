@@ -20,7 +20,7 @@ const ClassTeacher = () => {
         dispatch(getAllClassesFn())
     }
 
-    if (classState.error) return <ErrorAlert message={classState.error} />;
+    // if (classState.error) return <ErrorAlert message={classState.error} />;
     if (classState.isLoading) return <Loading />;
 
     return (
