@@ -38,7 +38,7 @@ const HomeTeacher = () => {
                     <div>
                         <Link to={'document'}>
                             <div className='bg-white hover:bg-gray-300 hover:border hover:border-blue-700 transition shadow-md text-black text-center rounded-md p-5'>
-                                <h1 className='text-4xl font-semibold text-blue-700'>{documentState.isLoading ? '...' : filteredDocuments?.length}</h1>
+                                <h1 className='text-4xl font-semibold text-blue-700'>{documentState.isLoading ? '...' : documentState.data?.documents?.length > 0 ? documentState.data?.documents?.length : 0}</h1>
                                 <p className='text-lg'>📁 Documents</p>
                                 <p className='text-sm text-gray-600'>Tap to see all</p>
                             </div>
@@ -47,7 +47,7 @@ const HomeTeacher = () => {
                     <div>
                         <Link to={'course'}>
                             <div className='bg-white hover:bg-gray-300 hover:border hover:border-blue-700 transition shadow-md text-black text-center rounded-md p-5'>
-                                <h1 className='text-4xl font-semibold text-blue-700'>{courseState.isLoading ? '...' : courseState.data?.courses?.length}</h1>
+                                <h1 className='text-4xl font-semibold text-blue-700'>{courseState.isLoading ? '...' : courseState.data?.courses?.length > 0 ? courseState.data?.courses?.length : 0}</h1>
                                 <p className='text-lg'>📚 Courses</p>
                                 <p className='text-sm text-gray-600'>Tap to see all</p>
                             </div>
@@ -56,7 +56,7 @@ const HomeTeacher = () => {
                     <div>
                         <Link to={'class'}>
                             <div className='bg-white hover:bg-gray-300 hover:border hover:border-blue-700 transition shadow-md text-black text-center rounded-md p-5'>
-                                <h1 className='text-4xl font-semibold text-blue-700'>{classState.isLoading ? '...' : classState.data?.classes?.length}</h1>
+                                <h1 className='text-4xl font-semibold text-blue-700'>{classState.isLoading ? '...' : classState.data?.classes?.length > 0 ? classState.data?.classes?.length : 0}</h1>
                                 <p className='text-lg'>🏫 Classes</p>
                                 <p className='text-sm text-gray-600'>Tap to see all</p>
                             </div>

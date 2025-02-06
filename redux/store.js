@@ -25,6 +25,8 @@ import { createFacultySlice } from './slices/facultySlices/createFacultySlice'
 import { getSingleUserSlice } from './slices/userSlices/getSingleUserSlice'
 import { updateUserSlice } from './slices/userSlices/updateUserSlice'
 import { createUserSlice } from './slices/userSlices/createUserSlice'
+import { getAllActivities } from './slices/activitySlices/getActivityByUserSlice'
+import { getActivityByUser } from './slices/activitySlices/getAllActivitiesSlice'
 
 const store = configureStore({
     reducer: {
@@ -54,6 +56,8 @@ const store = configureStore({
         newUser: createUserSlice.reducer,
         updateUser: updateUserSlice.reducer,
         deleteUser: deleteUserSlice.reducer,
+        activities: getAllActivities.reducer,
+        singleActivity: getActivityByUser.reducer,
     },
 })
 
