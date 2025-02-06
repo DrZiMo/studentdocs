@@ -1,0 +1,9 @@
+# render.yaml
+static_sites:
+    - name: studentdocs # Replace with your site name
+      build_command: npm run build # Command to build your app
+      publish_dir: dist # Folder where your built files are located
+      routes:
+          - type: rewrite
+            source: /(.*) # Match all paths
+            destination: /index.html # Serve index.html for all routes

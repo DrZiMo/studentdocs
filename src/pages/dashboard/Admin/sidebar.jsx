@@ -22,7 +22,7 @@ const SIDEBAR_LINKS = [
     { name: 'Faculty', icon: FaUsers, href: 'faculty' },
     { name: 'Class', icon: FaBook, href: 'class' },
     { name: 'Course', icon: FaBookOpen, href: 'course' },
-    { name: 'Upload', icon: FaUpload, href: '/studentdocs/document/upload' },
+    { name: 'Upload', icon: FaUpload, href: '/document/upload' },
 ]
 
 const SideBarTeacher = () => {
