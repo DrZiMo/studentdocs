@@ -35,7 +35,7 @@ const DocumentsTeacher = () => {
                     <div className="text-xl text-gray-400 cursor-pointer hover:text-gray-700 transition" onClick={refresh}>
                         <FaRedo />
                     </div>
-                    <Link to='/studentdocs/document/upload'><button className="text-white bg-blue-700 w-fit px-5 py-2 hover:bg-blue-800 rounded-md transition flex gap-2 items-center"><FaPlus /> Upload Document</button></Link>
+                    <Link to='/document/upload'><button className="text-white bg-blue-700 w-fit px-5 py-2 hover:bg-blue-800 rounded-md transition flex gap-2 items-center"><FaPlus /> Upload Document</button></Link>
                 </div>
             </div>
             {filteredDocuments?.length > 0 ? (
