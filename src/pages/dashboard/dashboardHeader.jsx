@@ -9,7 +9,7 @@ const DashboardHeader = () => {
                 StudentDocs
             </div>
             <div className="right-part flex gap-4 items-center">
-                <Link to='/studentdocs/'><div className="border-2 border-white text-white py-1 px-5 transition hover:bg-white  rounded-md hover:text-blue-700 cursor-pointer">
+                <Link to='/'><div className="border-2 border-white text-white py-1 px-5 transition hover:bg-white  rounded-md hover:text-blue-700 cursor-pointer">
                     Home
                 </div></Link>
                 <div>

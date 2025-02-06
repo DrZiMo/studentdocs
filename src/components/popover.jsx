@@ -13,7 +13,7 @@ const PopoverDemo = () => {
 
     const logouthandler = () => {
         dispatch(logout())
-        navigate('/studentdocs')
+        navigate('/')
     }
 
     return (
@@ -40,7 +40,7 @@ const PopoverDemo = () => {
                         </fieldset>
                         <div className="divider w-full h-[1px] bg-gray-200"></div>
                         <fieldset className="flex items-center gap-5 hover:bg-gray-400 px-6 py-1 rounded-md">
-                            <Link to={'/studentdocs'}>Home page</Link>
+                            <Link to={'/'}>Home page</Link>
                         </fieldset>
                         <fieldset className="flex items-center gap-5 hover:bg-red-200 px-6 py-1 rounded-md text-red-600 font-bold w-full transition">
                             <button onClick={logouthandler}>Logout</button>

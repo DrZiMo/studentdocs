@@ -69,7 +69,7 @@ const SinglePost = () => {
                     <div className='py-6 px-6 md:px-10 border border-gray-400 bg-white mt-4 rounded-md flex items-center gap-8'>
                         <div className='w-[150px]'>
                             <img
-                                src={`/studentdocs/assets/${selectedDocument.file_type.toLowerCase()}.png`}
+                                src={`/assets/${selectedDocument.file_type.toLowerCase()}.png`}
                                 alt={selectedDocument.file_type.toLowerCase()}
                             />
                         </div>

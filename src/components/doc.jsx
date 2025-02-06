@@ -17,12 +17,12 @@ const Doc = ({
     //   href={`https://drive.google.com/uc?export=download&id=${fileId}`}
     //   download
     // >
-    <Link to={`/studentdocs/detail/post/${id}`}>
+    <Link to={`/detail/post/${id}`}>
       {console.log(classes)}
       <div className="doc p-4 shadow-md border border-gray-400 bg-white hover:bg-gray-200 hover:border-blue-600 transition rounded-md flex flex-col gap-3">
         <div className="cover-part h-20 mx-auto">
           <img
-            src={`/studentdocs/assets/${fileType.toLowerCase()}.png`}
+            src={`/assets/${fileType.toLowerCase()}.png`}
             className="h-full"
           />
         </div>

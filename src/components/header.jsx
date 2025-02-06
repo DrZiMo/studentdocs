@@ -20,7 +20,7 @@ const Header = () => {
       </div>
       <div className="right-part flex gap-4 items-center">
         {userState.data.isSuccess ? (
-          <Link to={userState.data.user.role === 'admin' ? '/studentdocs/dashboard/admin' : '/studentdocs/dashboard/teacher'}><div className="upload border-2 border-white text-white py-1 px-5 transition hover:bg-white  rounded-md hover:text-blue-700 cursor-pointer">
+          <Link to={userState.data.user.role === 'admin' ? '/dashboard/admin' : '/dashboard/teacher'}><div className="upload border-2 border-white text-white py-1 px-5 transition hover:bg-white  rounded-md hover:text-blue-700 cursor-pointer">
             Dashboard
           </div></Link>
         ) : (null)}
@@ -28,7 +28,7 @@ const Header = () => {
           {userState.data.isSuccess ? (
             <PopoverDemo />
           ) : (
-            <Link to='/studentdocs/auth/login'>
+            <Link to='/auth/login'>
               <div className="text-white text-xl bg-blue-800 hover:text-gray-300 px-3 py-3 rounded-full transition relative group">
                 <FaUser />
               </div>

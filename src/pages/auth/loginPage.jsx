@@ -1,5 +1,5 @@
 import { useFormik } from "formik";
-import * as yup from 'yup'
+import * as yup from 'yup';
 import Back from "../../components/back";
 import { useDispatch, useSelector } from "react-redux";
 import { loginFn } from "../../../redux/slices/auth/loginSlice";
@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import ErrorAlert from "../../components/errorAlert";
 import Loading from "../../components/loading";
-import { toast, Bounce, ToastContainer } from "react-toastify";
+import { toast, Bounce } from "react-toastify";
 
 const LoginPage = () => {
     const loginState = useSelector(state => state.user)
@@ -66,11 +66,11 @@ const LoginPage = () => {
 
             localStorage.setItem("userData", JSON.stringify(loginState.data))
             if (loginState.data.user.role === 'admin') {
-                navigate('/studentdocs/dashboard/admin')
+                navigate('/dashboard/admin')
             }
 
             if (loginState.data.user.role === 'teacher') {
-                navigate('/studentdocs/dashboard/teacher')
+                navigate('/dashboard/teacher')
             }
         }
     }, [loginState.error, loginState.data])
@@ -102,7 +102,6 @@ const LoginPage = () => {
                     </button>
                 </form>
             </div>
-            <ToastContainer />
         </div >
     );
 };

@@ -130,7 +130,7 @@ const UploadPage = () => {
 
   return facultiesData.isLoading || coursesData.isLoading ? <div className='w-full h-screen flex justify-center items-center'><Loading /></div> : (
     <div className='w-[80%] md:w-[500px] mx-auto my-10 flex flex-col gap-6'>
-      <Back to={userData.user.role === 'admin' ? '/studentdocs/dashboard/admin' : '/studentdocs/dashboard/teacher'} />
+      <Back to={userData.user.role === 'admin' ? '/dashboard/admin' : '/dashboard/teacher'} />
       <form onSubmit={formik.handleSubmit} className='rounded-lg flex flex-col gap-4'>
         <div className='info-section bg-white rounded-md shadow-md'>
           <div className="top-part bg-blue-700 text-white font-semibold font-konit text-center text-2xl py-3 rounded-tl-lg rounded-tr-lg">Upload</div>
