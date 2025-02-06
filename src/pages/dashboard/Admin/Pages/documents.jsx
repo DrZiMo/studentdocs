@@ -22,7 +22,7 @@ const DocumentsAdmin = () => {
         dispatch(getDocuments());
     }
 
-    if (documentState.error) return <ErrorAlert message={documentState.error} />;
+    // if (documentState.error) return <ErrorAlert message={documentState.error} />;
     if (documentState.isLoading) return <Loading />;
 
     return (

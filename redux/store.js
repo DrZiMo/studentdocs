@@ -25,8 +25,8 @@ import { createFacultySlice } from './slices/facultySlices/createFacultySlice'
 import { getSingleUserSlice } from './slices/userSlices/getSingleUserSlice'
 import { updateUserSlice } from './slices/userSlices/updateUserSlice'
 import { createUserSlice } from './slices/userSlices/createUserSlice'
-import { getAllActivities } from './slices/activitySlices/getActivityByUserSlice'
-import { getActivityByUser } from './slices/activitySlices/getAllActivitiesSlice'
+import { getAllActivities } from './slices/activitySlices/getAllActivities'
+import { getActivityByUser } from './slices/activitySlices/getActivityByUserSlice'
 
 const store = configureStore({
     reducer: {

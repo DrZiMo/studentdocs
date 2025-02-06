@@ -83,7 +83,7 @@ const CourseTeacher = () => {
                     <tbody>
                         <tr>
                             <td colSpan={7} className="text-center py-4 text-gray-600 border">
-                                No faculty members found.
+                                No course members found.
                             </td>
                         </tr>
                     </tbody>

@@ -6,6 +6,8 @@ import { getAllClassesFn } from '../../../../../redux/slices/classSlices/classSl
 import { getAllUsers } from '../../../../../redux/slices/userSlices/allUsersSlice';
 import { getAllCourses } from '../../../../../redux/slices/courseSlices/courseSlice';
 import { getAllFaculties } from '../../../../../redux/slices/facultySlices/facultySlice';
+import { getAllActivitiesFn } from '../../../../../redux/slices/activitySlices/getAllActivities';
+import Loading from '../../../../components/loading';
 
 const HomeAdmin = () => {
     const userData = JSON.parse(localStorage.getItem('userData'))
@@ -15,6 +17,7 @@ const HomeAdmin = () => {
     const facultyState = useSelector((state) => state.faculty);
     const courseState = useSelector((state) => state.course);
     const classState = useSelector((state) => state.class);
+    const activityState = useSelector((state) => state.activities)
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -23,6 +26,7 @@ const HomeAdmin = () => {
         dispatch(getAllFaculties())
         dispatch(getAllCourses())
         dispatch(getAllClassesFn())
+        dispatch(getAllActivitiesFn())
     }, [dispatch]);
 
     return (
@@ -78,12 +82,15 @@ const HomeAdmin = () => {
                             </div>
                         </Link>
                     </div>
-                </div>
-            </div>
-            <div className='activity-part mt-6'>
-                <h1 className='title border-b border-gray-500 pb-1 mb-4 text-gray-900 font-semibold text-xl'>Activity Log</h1>
-                <div>
-                    Coming Soon ...
+                    <div>
+                        <Link to={'activity'}>
+                            <div className='bg-white hover:bg-gray-300 hover:border hover:border-blue-700 transition shadow-md text-black text-center rounded-md p-5'>
+                                <h1 className='text-4xl font-semibold text-blue-700'>{activityState.isLoading ? '...' : activityState.data?.activities?.length > 0 ? activityState.data?.activities?.length : 0}</h1>
+                                <p className='text-lg'>📊 Activity</p>
+                                <p className='text-sm text-gray-600'>Tap to see all</p>
+                            </div>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>

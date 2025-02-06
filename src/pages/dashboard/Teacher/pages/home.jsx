@@ -6,15 +6,15 @@ import { getAllClassesFn } from '../../../../../redux/slices/classSlices/classSl
 import { getAllUsers } from '../../../../../redux/slices/userSlices/allUsersSlice';
 import { getAllCourses } from '../../../../../redux/slices/courseSlices/courseSlice';
 import { getAllFaculties } from '../../../../../redux/slices/facultySlices/facultySlice';
+import { getActivityByUserFn } from '../../../../../redux/slices/activitySlices/getActivityByUserSlice';
 
 const HomeTeacher = () => {
     const userData = JSON.parse(localStorage.getItem('userData'))
 
-    const userState = useSelector((state) => state.allUsers)
     const documentState = useSelector((state) => state.document);
-    const facultyState = useSelector((state) => state.faculty);
     const courseState = useSelector((state) => state.course);
     const classState = useSelector((state) => state.class);
+    const activityState = useSelector((state) => state.singleActivity)
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -23,6 +23,7 @@ const HomeTeacher = () => {
         dispatch(getAllFaculties())
         dispatch(getAllCourses())
         dispatch(getAllClassesFn())
+        dispatch(getActivityByUserFn(userData.user.id))
     }, [dispatch]);
 
     const filteredDocuments = documentState.data?.documents?.filter(doc => doc.user.id === userData.user.id);
@@ -38,7 +39,7 @@ const HomeTeacher = () => {
                     <div>
                         <Link to={'document'}>
                             <div className='bg-white hover:bg-gray-300 hover:border hover:border-blue-700 transition shadow-md text-black text-center rounded-md p-5'>
-                                <h1 className='text-4xl font-semibold text-blue-700'>{documentState.isLoading ? '...' : documentState.data?.documents?.length > 0 ? documentState.data?.documents?.length : 0}</h1>
+                                <h1 className='text-4xl font-semibold text-blue-700'>{documentState.isLoading ? '...' : filteredDocuments?.length > 0 ? filteredDocuments?.length : 0}</h1>
                                 <p className='text-lg'>📁 Documents</p>
                                 <p className='text-sm text-gray-600'>Tap to see all</p>
                             </div>
@@ -62,12 +63,15 @@ const HomeTeacher = () => {
                             </div>
                         </Link>
                     </div>
-                </div>
-            </div>
-            <div className='activity-part mt-6'>
-                <h1 className='title border-b border-gray-500 pb-1 mb-4 text-gray-900 font-semibold text-xl'>Activity Log</h1>
-                <div>
-                    Coming Soon ...
+                    <div>
+                        <Link to={'activity'}>
+                            <div className='bg-white hover:bg-gray-300 hover:border hover:border-blue-700 transition shadow-md text-black text-center rounded-md p-5'>
+                                <h1 className='text-4xl font-semibold text-blue-700'>{activityState.isLoading ? '...' : activityState.data?.activities?.length > 0 ? activityState.data?.activities?.length : 0}</h1>
+                                <p className='text-lg'>📊 Activities</p>
+                                <p className='text-sm text-gray-600'>Tap to see all</p>
+                            </div>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>

@@ -8,6 +8,7 @@ import {
     FaCopy,
     FaUser,
     FaUsers,
+    FaChartLine,
 } from 'react-icons/fa'
 import { Link, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
@@ -15,6 +16,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 // Sidebar link data
 const SIDEBAR_LINKS = [
     { name: 'Home', icon: FaHome, href: '', isHome: true },
+    { name: 'Activtiy', icon: FaChartLine, href: 'activity' },
     { name: 'User', icon: FaUser, href: 'user' },
     { name: 'Document', icon: FaCopy, href: 'document' },
     { name: 'Faculty', icon: FaUsers, href: 'faculty' },
@@ -65,7 +67,8 @@ const SideBarTeacher = () => {
             {/* Sidebar */}
             <motion.div
                 ref={sidebarRef}
-                className={`fixed top-18 left-0 w-full h-screen bg-gray-800 text-white p-4 transform transition-transform duration-200 ease-in-out ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
+                style={{ position: "fixed", top: "4.5rem", left: 0 }}
+                className={`w-full h-screen bg-gray-800 text-white p-4 transform transition-transform duration-200 ease-in-out ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
                     } md:translate-x-0 md:relative`}
                 animate={{ width: 240 }}
             >

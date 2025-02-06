@@ -6,6 +6,7 @@ import {
     FaUpload,
     FaBars,
     FaCopy,
+    FaChartLine,
 } from 'react-icons/fa'
 import { Link, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
@@ -13,6 +14,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 // Sidebar link data
 const SIDEBAR_LINKS = [
     { name: 'Home', icon: FaHome, href: '', isHome: true },
+    { name: 'Activity', icon: FaChartLine, href: 'activity' },
     { name: 'Document', icon: FaCopy, href: 'document' },
     { name: 'Class', icon: FaBook, href: 'class' },
     { name: 'Course', icon: FaBookOpen, href: 'course' },

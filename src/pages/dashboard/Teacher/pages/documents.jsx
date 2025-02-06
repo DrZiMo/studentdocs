@@ -22,7 +22,7 @@ const DocumentsTeacher = () => {
         dispatch(getDocuments());
     }
 
-    if (documentState.error) return <ErrorAlert message={documentState.error} />;
+    // if (documentState.error) return <ErrorAlert message={documentState.error} />;
     if (documentState.isLoading) return <Loading />;
 
     const filteredDocuments = documentState.data?.documents?.filter(doc => doc.user.id === userData.user.id);

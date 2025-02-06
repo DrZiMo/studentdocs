@@ -22,7 +22,7 @@ const UsersAdmin = () => {
         dispatch(getAllUsers());
     }
 
-    if (userState.error) return <ErrorAlert message={userState.error} />;
+    // if (userState.error) return <ErrorAlert message={userState.error} />;
     if (userState.isLoading) return <Loading />;
 
     return (
@@ -89,7 +89,7 @@ const UsersAdmin = () => {
                     <tbody>
                         <tr>
                             <td colSpan={7} className="text-center py-4 text-gray-600 border">
-                                No documents found.
+                                No users found.
                             </td>
                         </tr>
                     </tbody>

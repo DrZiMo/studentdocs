@@ -9,11 +9,13 @@ const initialState = {
     data: {},
 }
 
-export const getAllActivitiesFn = createAsyncThunk(
-    'all/activities',
-    async (_, { rejectWithValue }) => {
+export const getActivityByUserFn = createAsyncThunk(
+    'single-user/activities',
+    async (user_id, { rejectWithValue }) => {
         try {
-            const res = await axios.get(`${baseUrl}activities/all`)
+            const res = await axios.post(`${baseUrl}activities/single-user`, {
+                user_id,
+            })
             return res.data
         } catch (error) {
             return rejectWithValue(error.message || DEFAULT_ERROR_MESSAGE)
@@ -21,27 +23,25 @@ export const getAllActivitiesFn = createAsyncThunk(
     }
 )
 
-export const getAllActivities = createSlice({
-    name: 'allActivities',
+export const getActivityByUser = createSlice({
+    name: 'singleUserActivity',
     initialState,
     extraReducers: (builder) => {
         builder
-            .addCase(getAllActivitiesFn.pending, (state) => {
+            .addCase(getActivityByUserFn.pending, (state) => {
                 state.isLoading = true
                 state.error = ''
                 state.data = {}
             })
-            .addCase(getAllActivitiesFn.fulfilled, (state, action) => {
+            .addCase(getActivityByUserFn.fulfilled, (state, action) => {
                 state.isLoading = false
                 state.error = ''
                 state.data = action.payload
             })
-            .addCase(getAllActivitiesFn.rejected, (state, action) => {
+            .addCase(getActivityByUserFn.rejected, (state, action) => {
                 state.isLoading = false
                 state.error = action.payload
                 state.data = {}
             })
     },
 })
-
-export default getAllActivities.reducer

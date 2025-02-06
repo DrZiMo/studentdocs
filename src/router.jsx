@@ -18,6 +18,8 @@ import DocumentsAdmin from './pages/dashboard/Admin/Pages/documents'
 import HomeAdmin from './pages/dashboard/Admin/Pages/homeAdmin'
 import FacultiesAdmin from './pages/dashboard/Admin/Pages/faculty'
 import UsersAdmin from './pages/dashboard/Admin/Pages/user'
+import ActivityAdmin from './pages/dashboard/Admin/Pages/activity'
+import ActivityTeacher from './pages/dashboard/Teacher/pages/activity'
 
 const router = createBrowserRouter([
   {
@@ -47,6 +49,10 @@ const router = createBrowserRouter([
         element: <UsersAdmin />
       },
       {
+        path: 'activity',
+        element: <ActivityAdmin />
+      },
+      {
         path: 'document',
         element: <DocumentsAdmin />
       },
@@ -73,6 +79,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <HomeTeacher />
+      },
+      {
+        path: 'activity',
+        element: <ActivityTeacher />
       },
       {
         path: 'document',
