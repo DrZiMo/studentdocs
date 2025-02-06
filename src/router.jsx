@@ -23,7 +23,7 @@ import ActivityTeacher from './pages/dashboard/Teacher/pages/activity'
 
 const router = createBrowserRouter([
   {
-    path: '/studentdocs',
+    path: '/',
     element: <MainPage />,
     children: [
       {
@@ -37,7 +37,7 @@ const router = createBrowserRouter([
     ]
   },
   {
-    path: '/studentdocs/dashboard/admin',
+    path: '/dashboard/admin',
     element: <DashboardLayoutAdmin />,
     children: [
       {
@@ -73,7 +73,7 @@ const router = createBrowserRouter([
 
   // Teacher Dashboard
   {
-    path: '/studentdocs/dashboard/teacher',
+    path: '/dashboard/teacher',
     element: <DashboardLayoutTeacher />,
     children: [
       {
@@ -99,19 +99,19 @@ const router = createBrowserRouter([
     ]
   },
   {
-    path: '/studentdocs/document/upload',
+    path: '/document/upload',
     element: <UploadPage />
   },
   {
-    path: 'studentdocs/customer-support',
+    path: '/customer-support',
     element: <CustomerSupport />
   },
   {
-    path: '/studentdocs/project-overview',
+    path: '/project-overview',
     element: <ProjectOverview />
   },
   {
-    path: '/studentdocs/auth/login',
+    path: '/auth/login',
     element: <LoginPage />
   },
   {
